@@ -52,6 +52,7 @@
       justify-content: center;
       gap: 40px;
       z-index: 10;
+      pointer-events: auto;
     }
 
     button {
@@ -149,6 +150,11 @@
     // Show buttons after 30s zoom
     setTimeout(() => {
       document.getElementById('buttons').style.display = 'flex';
+    
+      // 🔥 THIS IS THE IMPORTANT PART
+      const intro = document.getElementById('intro');
+      intro.style.pointerEvents = 'none';
+      intro.style.display = 'none';
     }, 30000);
 
     function startCelebration() {
